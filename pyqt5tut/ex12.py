@@ -110,9 +110,11 @@ class Window(QtWidgets.QMainWindow):
 	def enlarge_window(self, state):
 		if state == QtCore.Qt.Checked:
 			self.setGeometry(50,50,1000,600)
-			# app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
+			app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
 		else:
 			self.setGeometry(50,50,500,300)
+			app.setStyleSheet('')
+
 
 
 	def close_application(self):
