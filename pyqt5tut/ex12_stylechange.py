@@ -34,14 +34,12 @@ class Window(QtWidgets.QMainWindow):
 		btn.move(0,100)
 		#=============================================#
 
-		#=============Tool bar button==================#
+		#=======Tool bar button & Font Widget==========#
 		extractAction = QtWidgets.QAction(QtGui.QIcon('UNSC_Logo.png'),'Flee the scene', self)
 		extractAction.triggered.connect(self.close_application)
 		self.toolBar = self.addToolBar('Extraction')
 		self.toolBar.addAction(extractAction)
-		#==============================================#
 
-		#=================Font Widget===================#
 		fontChoice = QtWidgets.QAction('Font', self)
 		fontChoice.triggered.connect(self.font_choice)
 		'''This second instance of 'Font' can separate the 
@@ -51,18 +49,9 @@ class Window(QtWidgets.QMainWindow):
 		self.toolBar.addAction(fontChoice)
 		#==============================================#
 
-		#===============Color Picker===================#
-		color = QtGui.QColor(0,0,0)
-
-		fontColor = QtWidgets.QAction('Font bg Color', self)
-		fontColor.triggered.connect(self.color_picker)
-
-		self.toolBar.addAction(fontColor)
-		#==============================================#
-
 		#===========Resize Toggle Check Box============#
 		checkBox = QtWidgets.QCheckBox('Enlarge Window', self)
-		checkBox.move(300,50)
+		checkBox.move(100,25)
 		#checkBox.toggle()
 		checkBox.stateChanged.connect(self.enlarge_window)
 		#=============================================#
@@ -97,19 +86,9 @@ class Window(QtWidgets.QMainWindow):
 		comboBox.move(50,250)
 		self.styleChoice.move(50,150)
 		comboBox.activated[str].connect(self.style_choice)
-		#==============================================#
-
-		#===============Calendar=======================#
-		cal = QtWidgets.QCalendarWidget(self)
-		cal.move(500,200)
-		cal.resize(200,200)
-		#==============================================#
+		#=============================================#
 
 		self.show()
-
-	def color_picker(self):
-		color = QtWidgets.QColorDialog.getColor()
-		self.styleChoice.setStyleSheet('QWidget { background-color: %s}' % color.name())
 
 	def font_choice(self):
 		font, valid = QtWidgets.QFontDialog.getFont()
@@ -131,8 +110,10 @@ class Window(QtWidgets.QMainWindow):
 	def enlarge_window(self, state):
 		if state == QtCore.Qt.Checked:
 			self.setGeometry(50,50,1000,600)
+			app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
 		else:
 			self.setGeometry(50,50,500,300)
+			app.setStyleSheet('')
 
 
 
@@ -148,6 +129,7 @@ class Window(QtWidgets.QMainWindow):
 
 if __name__ == '__main__':
 	app = QtWidgets.QApplication(sys.argv)
+	# app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
 	GUI = Window()
 	sys.exit(app.exec_())
 
