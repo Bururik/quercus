@@ -107,12 +107,6 @@ def main():
     window.tabifyDockWidget(dw_displays, dw_inputs)
     window.tabifyDockWidget(dw_inputs, dw_inputs_no_field)
 
-    # connect some actions, signals and functions
-    # auto quit after 2s when testing on travis-ci
-
-    if "--travis" in sys.argv:
-        QTimer.singleShot(2000, app.exit)
-
     # run
     window.showMaximized()
     app.exec_()
