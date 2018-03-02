@@ -78,37 +78,38 @@ def main():
     ui.setupUi(window)
     window.setWindowTitle("QDarkStyle Example - Using " + args.qt_from)
 
-    # create docks for buttons
-    dw_buttons = QDockWidget()
-    ui_buttons = ui_buttons()
-    ui_buttons.setupUi(dw_buttons)
-    window.addDockWidget(Qt.RightDockWidgetArea, dw_buttons)
+    # # create docks for buttons
+    # dw_buttons = QDockWidget()
+    # ui_buttons = ui_buttons()
+    # ui_buttons.setupUi(dw_buttons)
+    # window.addDockWidget(Qt.RightDockWidgetArea, dw_buttons)
 
-    # create docks for buttons
-    dw_displays = QDockWidget()
-    ui_displays = ui_displays()
-    ui_displays.setupUi(dw_displays)
-    window.addDockWidget(Qt.RightDockWidgetArea, dw_displays)
+    # # create docks for buttons
+    # dw_displays = QDockWidget()
+    # ui_displays = ui_displays()
+    # ui_displays.setupUi(dw_displays)
+    # window.addDockWidget(Qt.RightDockWidgetArea, dw_displays)
 
-    # create docks for inputs - fields
-    dw_inputs = QDockWidget()
-    ui_inputs = ui_inputs()
-    ui_inputs.setupUi(dw_inputs)
-    window.addDockWidget(Qt.RightDockWidgetArea, dw_inputs)
+    # # create docks for inputs - fields
+    # dw_inputs = QDockWidget()
+    # ui_inputs = ui_inputs()
+    # ui_inputs.setupUi(dw_inputs)
+    # window.addDockWidget(Qt.RightDockWidgetArea, dw_inputs)
 
-    # create docks for inputs - no fields
-    dw_inputs_no_field = QDockWidget()
-    ui_inputs_no_field = ui_inputs_no_fields()
-    ui_inputs_no_field.setupUi(dw_inputs_no_field)
-    window.addDockWidget(Qt.RightDockWidgetArea, dw_inputs_no_field)
+    # # create docks for inputs - no fields
+    # dw_inputs_no_field = QDockWidget()
+    # ui_inputs_no_field = ui_inputs_no_fields()
+    # ui_inputs_no_field.setupUi(dw_inputs_no_field)
+    # window.addDockWidget(Qt.RightDockWidgetArea, dw_inputs_no_field)
 
-    # tabify docks
-    window.tabifyDockWidget(dw_buttons, dw_displays)
-    window.tabifyDockWidget(dw_displays, dw_inputs)
-    window.tabifyDockWidget(dw_inputs, dw_inputs_no_field)
+    # # tabify docks
+    # window.tabifyDockWidget(dw_buttons, dw_displays)
+    # window.tabifyDockWidget(dw_displays, dw_inputs)
+    # window.tabifyDockWidget(dw_inputs, dw_inputs_no_field)
 
     # run
-    window.showMaximized()
+    # window.showMaximized()
+    window.show()
     app.exec_()
 
 if __name__ == "__main__":
