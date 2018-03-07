@@ -114,8 +114,9 @@ class Window(QtWidgets.QMainWindow):
 		comboBox.addItem('cde')
 		comboBox.addItem('plastique')
 		comboBox.addItem('Cleanlooks')
-		comboBox.addItem('windowsvista')
-		comboBox.addItem('fusion')
+		comboBox.addItem('windowsvista') # This is the default in my windows machine
+		comboBox.addItem('Fusion')
+		comboBox.addItem('windowsxp')
 
 		comboBox.move(50,250)
 		self.styleChoice.move(50,150)
@@ -177,8 +178,6 @@ class Window(QtWidgets.QMainWindow):
 			self.setGeometry(50,50,1000,600)
 		else:
 			self.setGeometry(50,50,500,300)
-
-
 
 	def close_application(self):
 		choice = QtWidgets.QMessageBox.question(self,'Execute!', 'Kill All the Humans?',QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
