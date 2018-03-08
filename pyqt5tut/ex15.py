@@ -117,6 +117,8 @@ class Window(QtWidgets.QMainWindow):
 		comboBox.addItem('windowsvista') # This is the default in my windows machine
 		comboBox.addItem('Fusion')
 		comboBox.addItem('windowsxp')
+		comboBox.addItem('Macintosh')
+
 
 		comboBox.move(50,250)
 		self.styleChoice.move(50,150)
