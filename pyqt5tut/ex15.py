@@ -62,6 +62,8 @@ class Window(QtWidgets.QMainWindow):
 		extractAction.triggered.connect(self.close_application)
 		self.toolBar = self.addToolBar('Extraction')
 		self.toolBar.addAction(extractAction)
+		# self.toolBar.hide()
+		self.toolBar.addSeparator()
 
 		# this thing takes away the toolbar toggle
 		self.toolBar.setContextMenuPolicy(QtCore.Qt.PreventContextMenu)
