@@ -84,7 +84,7 @@ def main():
     # ui_buttons.setupUi(dw_buttons)
     # window.addDockWidget(Qt.RightDockWidgetArea, dw_buttons)
 
-    # # create docks for buttons
+    # # create docks for displays
     # dw_displays = QDockWidget()
     # ui_displays = ui_displays()
     # ui_displays.setupUi(dw_displays)
