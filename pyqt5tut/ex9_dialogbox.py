@@ -101,7 +101,7 @@ class Window(QtWidgets.QMainWindow):
 			self.setGeometry(50,50,500,300)
 
 	def close_application(self):
-		choice = QtWidgets.QMessageBox.question(self,'Execute!', 'Kill All the Humans?',QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
+		choice = QtWidgets.QMessageBox.question(self,'Execute!', 'Kill All the Humans?\n poopoopoooooo\n dieeeeeee',QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
 		if choice == QtWidgets.QMessageBox.Yes:
 			print('Extermination commencing...\nHave a nice day! ;)')
 			sys.exit()

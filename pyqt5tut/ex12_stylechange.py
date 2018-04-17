@@ -115,7 +115,20 @@ class Window(QtWidgets.QMainWindow):
 			self.setGeometry(50,50,500,300)
 			app.setStyleSheet('')
 
+	def closeEvent(self, event):      # user clicked the x or pressed alt-F4...
 
+		programname = os.path.basename(__file__)
+		programbase, ext = os.path.splitext(programname)  # extract basename and ext from filename
+		settings = QtCore.QSettings("company", programbase)    
+		settings.setValue("geometry", self.saveGeometry())  # save window geometry
+		settings.setValue("state", self.saveState(UI_VERSION))   # save settings (UI_VERSION is a constant you should increment when your UI changes significantly to prevent attempts to restore an invalid state.)
+
+		settings.setValue("checkBoxReplace", self.checkBoxReplace.checkState());
+		settings.setValue("checkBoxFirst", self.checkBoxFirst.checkState());
+
+		settings.setValue("radioButton1", self.radioButton1.isChecked());
+
+		sys.exit()  # prevents second call
 
 	def close_application(self):
 		choice = QtWidgets.QMessageBox.question(self,'Execute!', 'Kill All the Humans?',QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
